@@ -1,7 +1,7 @@
 //get /quizes/question
 exports.question=function(req, res){
 	models.Quiz.findAll().succes(function(quiz){
-	res.render('quizes/question', {pregunta: pregunta: quiz[0].pregunta});
+	res.render('quizes/question', {pregunta: quiz[0].pregunta});
 })
 };
 exports.answer=function(req, res){
