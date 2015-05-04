@@ -11,7 +11,7 @@ var sequelize= new Sequelize(null,null,null,
 
 var Quiz =sequelize.import(path.join(__dirname,'quiz'));
 exports.Quiz=Quiz;
-sequelize.sync().success(function(){
+sequelize.sync().then(function(){
 	Quiz.count().success(function(count){
 		if(count===0){
 			Quiz.create({ pregunta:'Capital de Italia',
@@ -20,6 +20,6 @@ sequelize.sync().success(function(){
 		})
 			.success(function(){console.log('Base de datos inicializada')});
 		};
+
 	});
-	
 });
