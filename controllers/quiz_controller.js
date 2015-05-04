@@ -10,5 +10,5 @@ exports.answer=function(req, res){
 	}
 };
 exports.creditos=function(req, res){
-	res.render('creditos', {creditos: 'creditos de marta y luis'});
+	res.render('author', {creditos: 'creditos de marta y luis'});
 };
