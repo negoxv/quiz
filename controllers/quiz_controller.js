@@ -9,3 +9,6 @@ exports.answer=function(req, res){
 		res.render('quizes/answer', {respuesta: 'Incorrecto'});
 	}
 };
+exports.creditos=function(req, res){
+	res.render('creditos', {creditos: 'creditos de marta y luis'});
+};
