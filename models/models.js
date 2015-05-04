@@ -1,4 +1,5 @@
 var path =require('path');
+var models = require('../models/models.js');
 
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var DB_name  = (url[6]||null);
@@ -27,7 +28,7 @@ var Quiz =sequelize.import(path.join(__dirname,'quiz'));
 exports.Quiz=Quiz;
 sequelize.sync().success(function(){
 	Quiz.count().success(function(count){
-		if(countO===0){
+		if(count===0){
 			Quiz.create({ pregunta:'Capital de Italia'
 							respuesta:'Roma'
 
