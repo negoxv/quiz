@@ -1,4 +1,5 @@
-//get /quizes/question
+//get /quizes/questio
+var models = require('../models/models.js');
 exports.question=function(req, res){
 	models.Quiz.findAll().succes(function(quiz){
 	res.render('quizes/question', {pregunta: quiz[0].pregunta});
