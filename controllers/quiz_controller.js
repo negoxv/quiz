@@ -11,7 +11,7 @@ exports.load=function(req, res, next, quizId){
 };
 exports.show=function(req, res){
 	models.Quiz.find(req.params.quizId).then(function(quiz){
-	res.render('quizes/show', {quiz: quiz});
+	res.render('quizes/show', { quiz: quiz});
 }
 )
 };

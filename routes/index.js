@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var quizController =require('../controllers/quiz_controller');
+var quizController =require('../controllers/quiz_controller.js');
 router.get('/',function(res,req){
 	res.render('index', {title: 'Quiz'});
 });
@@ -8,6 +8,6 @@ router.get('/',function(res,req){
 router.param('quizId', quizController.load);
 /* GET home page. */
 router.get('/quizes',          quizController.index);
-router.get('/quizes/:quizId(\\d+)', quizController.show);
-router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
+router.get('/quizes/:quizId', quizController.show);
+router.get('/quizes/:quizId/answer', quizController.answer);
 module.exports = router;
