@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-
-    <title>Quiz</title>
-<link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' 
-        type='text/css'
-        media='only screen and (min-width: 530px) and (min-device-width: 481px)'
-        href='/stylesheets/wide.css' />
-  <link rel='stylesheet'
-        type='text/css'
-        media='only screen and (max-width: 480px)' 
-        href='/stylesheets/smartphone.css' />
-
-
-  </head>
-    <body>
- 
-      <p>Quiz : el juego de las preguntas</p>
-      <form method="get" action="/quizes/answer">
-        Pregunta: <%= pregunta%> <p>
-          <input type="text" name="respuesta" value="Responda aquí"/>
-          <button type="sumbit" value ="Enviar">Enviar<buton>
-       </form>
-    </body>
-</html>
+<form method="get" action="/quizes/<%= quiz.id %>/answer">
+Pregunta: <%= quiz.pregunta %> <p>
+<input type="text" name="respuesta" value="Responda aquí"/>
+<input type="submit" value="Enviar">
+</form>
